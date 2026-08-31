@@ -490,17 +490,25 @@ body {
 
 /*Mensaje*/
 .happy-birthday {
-    position: absolute;
-    top: -150px; /* Ajusta la distancia vertical desde la torta */
-    left: 20%;
+    position: absolute; 
+    top: -150px;
+    left: 50%;
     transform: translateX(-50%);
+    
+    width: 100%;
+    max-width: 100vw;
+    padding: 0 10px;
+    box-sizing: border-box;
+    
+    text-align: center;
     font-family: 'Pacifico', cursive;
-    font-size: 40px;
-    color: #ff4d6d; 
-    user-select: none;
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.15);
-    animation: flotar 2s ease-in-out infinite,
-               brillo 1.5s infinite;
+    font-size: clamp(24px, 7vw, 40px);
+    color: #ff4d6d;  
+    user-select: none; 
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.15); 
+    
+    animation: flotar 2s ease-in-out infinite, 
+               brillo 1.5s infinite; 
 }
 
 /* Modal */
@@ -571,12 +579,12 @@ body {
 
 /* Animación flotante */
 @keyframes flotar {
-    from, to {
-        transform: translate(0, 0);
-    }
-    50% {
-        transform: translate(0, -8px);
-    }
+     from, to { 
+        transform: translateX(-50%) translateY(0); 
+    } 
+    50% { 
+        transform: translateX(-50%) translateY(-8px); 
+    } 
 }
 
 @keyframes brillo {
