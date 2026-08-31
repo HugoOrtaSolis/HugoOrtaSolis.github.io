@@ -490,13 +490,11 @@ body {
 
 /*Mensaje*/
 .happy-birthday {
-   position: absolute;
-    top: -150px;
-    left: 50%;
-    transform: translateX(-50%);
+    position: fixed;
+    top: 150px;
+    left: 0;
 
     width: 100vw;
-    max-width: 100vw;
     padding: 0 10px;
     box-sizing: border-box;
 
@@ -507,10 +505,12 @@ body {
 
     color: #ff4d6d;
     user-select: none;
+
     text-shadow: 2px 2px 4px rgba(0,0,0,0.15);
 
-    animation: flotar 2s ease-in-out infinite,
-               brillo 1.5s infinite;
+    animation:
+        flotar-movil 2s ease-in-out infinite,
+        brillo 1.5s infinite;
 
     z-index: 10;
 }
@@ -621,6 +621,25 @@ body {
     .happy-birthday {
         top: -85px;
         font-size: 27px;
+    }
+}
+
+@keyframes flotar-movil {
+    from, to {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-8px);
+    }
+}
+
+@media (max-width: 600px) {
+    .happy-birthday {
+        top: 150px;
+        left: 0;
+        width: 100vw;
+        font-size: 30px;
     }
 }
 
